@@ -17,8 +17,5 @@
   "author": "Ken Nguyen",
   "license": "ISC",
   "homepage": "https://github.com/ikendoit/closest-point-detector#readme",
-  "dependencies": {
-    "babel-preset-env": "^1.7.0",
-    "jest": "^23.6.0"
-  }
+  "dependencies": {}
 }

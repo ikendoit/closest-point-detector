@@ -2,7 +2,7 @@
 
 ## What This Does : 
 
-<Image Here>
+![Description](https://imgur.com/a/irIpEt1))
 
 ## API: 
 ```
@@ -44,7 +44,7 @@ $ npm install closest-point-detector
 
 ```
 
-### Testing: 
+## Testing: 
 
 ```sh
   npm install --dev jest 
