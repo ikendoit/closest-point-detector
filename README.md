@@ -2,22 +2,36 @@
 
 ## What This Does : 
 
-![Description](demo.gif)
+```
+  closest-point-detector helps `detect and determine` the `Point or Vertex` on a Polygon that is the closest to a particular external Point.
+```
+
+![WatchMeInAction](demo.gif)
 
 ## API: 
 ```
   FindNearestPointOnPolygon(<polygon-geojson>, <point-geojson>, <threshold>)
   FindNearestVertexOnPolygon(<polygon-geojson>, <point-geojson>, <threshold>)
 
-  @Param: 
+  @ Param: 
     polygon-geojson: GeoJSON data of a polygon.
     point-geojson: GeoJSON data of a point.
     threshold: the threshold distance to detect point/vertex. 
         If the distance detected point/vertex and the <point-geojson> is more than <threshold>,
         The functions will return `null`
+  NOTE: the coordinate system: lat-lng used here is the same as Google Map's
+  @ Return: 
+    null ||
+    {
+      type: 'Point',
+      coordinates: [Number, Number],
+      distance: Number,
+      idPoly: Number - The detected index of the vertex on the polygon (when we look for nearest vertex).
+    }
+    
 ```
 
-## Examples: 
+## Examples
 
 ```javascript
 import { 
