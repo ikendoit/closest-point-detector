@@ -2,7 +2,7 @@
 
 ## What This Does : 
 
-![Description](https://i.imgur.com/a/irIpEt1.jpg))
+![Description](https://i.imgur.com/a/irIpEt1.gif))
 
 ## API: 
 ```
