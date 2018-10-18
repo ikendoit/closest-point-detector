@@ -5,7 +5,7 @@ import { pointGeoJSON, polygonGeoJSON, pointArray } from "./types";
 const findNearestPointOnPolygon = (
   polygonGeoJSON: polygonGeoJSON,
   pointGeoJSON: pointGeoJSON,
-  VERTEX_THRESHOLD_SNAP = 0.03
+  VERTEX_THRESHOLD_SNAP = 3
 ) => {
   validatePolygonGeoJSON(polygonGeoJSON);
 

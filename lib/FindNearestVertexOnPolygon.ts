@@ -4,7 +4,8 @@ import { pointGeoJSON, polygonGeoJSON, pointArray } from "./types";
 
 const findNearestVertexOnPolygon = (
   polygonGeoJSON: polygonGeoJSON,
-  pointGeoJSON: pointGeoJSON
+  pointGeoJSON: pointGeoJSON,
+  VERTEX_THRESHOLD_SNAP = 3
 ) => {
   validatePolygonGeoJSON(polygonGeoJSON);
 
@@ -32,6 +33,11 @@ const findNearestVertexOnPolygon = (
   if (!nearestPoint[0]) return null;
 
   const distance = geometry.calcLength(nearestPoint, pointCoords);
+
+  // if point is too far away
+  if (distance > VERTEX_THRESHOLD_SNAP) {
+    return null;
+  }
 
   return {
     type: "Point",

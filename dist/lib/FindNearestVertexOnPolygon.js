@@ -5,7 +5,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var Validator_1 = require("./Validator");
 var Geometry_1 = __importDefault(require("./Geometry"));
-var findNearestVertexOnPolygon = function (polygonGeoJSON, pointGeoJSON) {
+var findNearestVertexOnPolygon = function (polygonGeoJSON, pointGeoJSON, VERTEX_THRESHOLD_SNAP) {
+    if (VERTEX_THRESHOLD_SNAP === void 0) { VERTEX_THRESHOLD_SNAP = 3; }
     Validator_1.validatePolygonGeoJSON(polygonGeoJSON);
     var nearestPoint = [];
     var nearestLength = -1;
@@ -28,6 +29,10 @@ var findNearestVertexOnPolygon = function (polygonGeoJSON, pointGeoJSON) {
     if (!nearestPoint[0])
         return null;
     var distance = Geometry_1.default.calcLength(nearestPoint, pointCoords);
+    // if point is too far away
+    if (distance > VERTEX_THRESHOLD_SNAP) {
+        return null;
+    }
     return {
         type: "Point",
         coordinates: [nearestPoint[0], nearestPoint[1]],

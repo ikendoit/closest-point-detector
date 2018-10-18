@@ -1,8 +1,8 @@
 import {
-  findNearestPointOnPolygon
+  findNearestVertexOnPolygon
 } from '../dist/index.js'
 
-describe('test nearest point to a polygon', () => {
+describe('find nearest vertex of a polygon to a point', () => {
   it('simple square', () => {
     const polygon = {
       type: 'Polygon',
@@ -19,10 +19,9 @@ describe('test nearest point to a polygon', () => {
       coordinates: [ 12, 8 ]
     }
 
-    const result = findNearestPointOnPolygon(polygon, point, 4)
+    const result = findNearestVertexOnPolygon(polygon, point, 4)
     expect(result.type).toEqual('Point')
-    expect(result.coordinates).toEqual([10,8])
-    expect(result.distance).toEqual(2)
+    expect(result.coordinates).toEqual([10,10])
   });
   it('hexagon shape', () => {
     const polygon = {
@@ -44,9 +43,9 @@ describe('test nearest point to a polygon', () => {
       coordinates: [ 20,20  ]
     }
 
-    const result = findNearestPointOnPolygon(polygon, point, 20)
+    const result = findNearestVertexOnPolygon(polygon, point, 20)
     expect(result.type).toEqual('Point')
-    expect(result.coordinates).toEqual([ 5.294117647058823, 11.176470588235295])
+    expect(result.coordinates).toEqual([ 6, 10 ])
   });
   it('NULL if capture threshold is too small (default: 0.03)', () => {
     const polygon = {
@@ -64,7 +63,7 @@ describe('test nearest point to a polygon', () => {
       coordinates: [ 12, 8 ]
     }
 
-    const result = findNearestPointOnPolygon(polygon, point, 0.4)
+    const result = findNearestVertexOnPolygon(polygon, point, 0.4)
     expect(result).toEqual(null)
   });
 });
