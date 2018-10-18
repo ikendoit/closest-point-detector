@@ -1,0 +1,23 @@
+{
+  "name": "spatial-closest",
+  "version": "1.0.0",
+  "description": "A library to calculate, identify the closest point/vertex of a polygon to a cursor position.",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "jest",
+    "build": "tsc"
+  },
+  "keywords": [
+    "spatial",
+    "geospatial",
+    "closest",
+    "vertex",
+    "point-detection-spatial"
+  ],
+  "author": "Ken Nguyen",
+  "license": "ISC",
+  "dependencies": {
+    "babel-preset-env": "^1.7.0",
+    "jest": "^23.6.0"
+  }
+}
