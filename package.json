@@ -1,6 +1,6 @@
 {
   "name": "closest-point-detector",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "A library to calculate, identify the closest point/vertex of a polygon to a cursor position.",
   "main": "dist/index.js",
   "scripts": {
